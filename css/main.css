@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------*\
     #UTILS - Color Variables
 \*------------------------------------*/
@@ -1132,11 +1133,15 @@ nav {
 
 header {
   min-height: 50vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-top: 120px; }
+  justify-content: center; }
+  @media (min-width: 768px) {
+    header {
+      padding: 100px;
+      padding-top: 120px; } }
 
 article {
   margin-bottom: 140px; }
@@ -1191,9 +1196,12 @@ nav h5 {
       margin-top: 60px; } }
 
 .body-container {
-  max-width: 600px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 20px; }
+  padding: 0px; }
+  @media (min-width: 768px) {
+    .body-container {
+      padding: 20px; } }
 
 .profile-meta {
   margin: 0 auto;
@@ -1202,32 +1210,60 @@ nav h5 {
     background: grey;
     margin-right: 20px; }
 
+.header--image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 1.5em 10px;
+  quotes: "“" "”" "‘" "’";
+  text-align: left;
+  font-size: 18px; }
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+blockquote p {
+  display: inline; }
+
 .lead-paragraph {
-  font-family: Tenor Sans;
   font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 157.95%;
-  /* or 32px */
-  text-align: center;
-  max-width: 335px;
-  color: #1A2329;
-  position: relative; }
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 40px;
+  /* or 94% */
+  max-width: 1148px;
+  letter-spacing: -0.02em;
+  margin-bottom: 80px;
+  color: #000000; }
+  .lead-paragraph a {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 700; }
+    .lead-paragraph a:hover {
+      text-decoration: underline; }
+  .lead-paragraph .atticus {
+    color: blue; }
+  .lead-paragraph .bolt {
+    color: purple; }
   @media (min-width: 768px) {
     .lead-paragraph {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 157.95%;
-      /* or 38px */
-      text-align: center;
-      color: #1A2329;
-      max-width: 545px; } }
+      font-size: 64px;
+      line-height: 64px; } }
   .lead-paragraph:before {
     content: '';
     width: 150px;
     height: 150px;
-    background: url("/assets/img/header-1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1239,7 +1275,6 @@ nav h5 {
     content: '';
     width: 150px;
     height: 150px;
-    background: url("/assets/img/header-2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1252,19 +1287,49 @@ p a {
   font-family: Tenor Sans;
   font-size: 1em; }
 
-.profile-meta {
-  display: flex;
-  flex-direction: row; }
-  .profile-meta .avatar {
-    max-width: 80px;
-    height: 80px;
-    width: 80px;
-    border-radius: 80px;
-    overflow: hidden; }
-    .profile-meta .avatar img {
-      object-fit: cover;
+.header__content {
+  position: relative;
+  padding-top: 120px; }
+  .header__content .profile-meta {
+    position: absolute;
+    right: 70%;
+    top: 0;
+    display: flex;
+    flex-direction: row; }
+    .header__content .profile-meta .avatar {
+      position: relative;
+      max-width: 80px;
+      height: 80px;
+      width: 80px;
+      border-radius: 80px;
+      overflow: hidden;
+      box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
+      z-index: 2; }
+      .header__content .profile-meta .avatar img {
+        object-fit: cover;
+        width: 100%;
+        height: auto; }
+    .header__content .profile-meta:after {
+      content: '';
+      position: absolute;
       width: 100%;
-      height: auto; }
+      max-width: 88px;
+      height: 88px;
+      width: 88px;
+      top: -4px;
+      bottom: -8px;
+      left: -4px;
+      right: -8px;
+      border-radius: 80px;
+      overflow: hidden;
+      background: linear-gradient(to right, red, purple);
+      background-color: #FAACA8;
+      background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%); }
+  @media (min-width: 768px) {
+    .header__content {
+      padding-top: 0px; }
+      .header__content .profile-meta {
+        right: 102%; } }
 
 .case-study--atticus {
   background: blue;
