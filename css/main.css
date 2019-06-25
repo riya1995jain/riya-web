@@ -1210,6 +1210,9 @@ nav h5 {
     background: grey;
     margin-right: 20px; }
 
+.shot-content {
+  margin-bottom: 15px; }
+
 .header--image {
   display: flex;
   justify-content: center;
